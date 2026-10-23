@@ -5,3 +5,5 @@ pnpm-lock.yaml
 packs/**/datos
 packs/**/parametros
 docs/spec/modulos
+docs/spec/especificacion.md
+docs/arquitectura.md
