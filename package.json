@@ -13,7 +13,9 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "guardas": "tsx tools/guardas/src/cli.ts",
-    "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm --filter @af4/web test"
+    "spec:split": "tsx tools/spec-split/src/cli.ts split",
+    "spec:check": "tsx tools/spec-split/src/cli.ts check",
+    "verify": "pnpm typecheck && pnpm lint && pnpm spec:check && pnpm test && pnpm --filter @af4/web test"
   },
   "devDependencies": {
     "@types/node": "22.20.5",
