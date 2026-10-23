@@ -1,0 +1,13 @@
+# Rutas protegidas: revisión humana obligatoria (lista y permisos en tools/guardas/src/reglas.ts).
+# Sustituir @propietario por el usuario o equipo de GitHub real antes de activar la protección de ramas.
+/CLAUDE.md @propietario
+/eslint.config.mjs @propietario
+/tsconfig.base.json @propietario
+/.github/ @propietario
+/packages/contracts/ @propietario
+/packages/engine/test/aceptacion/ @propietario
+/packages/engine/test/golden/ @propietario
+/packs/**/datos/ @propietario
+/packs/**/parametros/ @propietario
+/tools/guardas/ @propietario
+/**/AGENTS.md @propietario
