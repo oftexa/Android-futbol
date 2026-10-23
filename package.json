@@ -8,16 +8,17 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "typecheck": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json && pnpm --filter @af4/web typecheck",
     "lint": "eslint . && prettier --check .",
     "format": "prettier --write .",
     "test": "vitest run",
     "guardas": "tsx tools/guardas/src/cli.ts",
-    "verify": "pnpm typecheck && pnpm lint && pnpm test"
+    "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm --filter @af4/web test"
   },
   "devDependencies": {
     "@types/node": "22.20.5",
     "eslint": "10.13.0",
+    "eslint-plugin-react-hooks": "7.1.1",
     "prettier": "3.9.10",
     "tsx": "4.23.15",
     "typescript": "5.9.3",

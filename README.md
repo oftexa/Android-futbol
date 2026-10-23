@@ -35,3 +35,15 @@ La interfaz (`pnpm dev`) llegará con la tarea T-07.
 - `docs/`: especificación, tareas y decisiones.
 
 Reglas para agentes: `CLAUDE.md`. Arquitectura: `docs/`.
+
+## Despliegue de la vista previa (Cloudflare Pages)
+
+La PWA se publica como sitio estático. Configuración del proyecto en Cloudflare Pages (conectado a este repositorio):
+
+- Comando de compilación: `pnpm install --frozen-lockfile && pnpm --filter @af4/web build`
+- Directorio de salida: `apps/web/dist`
+- Versión de Node: 22.13 o superior (variable `NODE_VERSION=22`)
+
+Tras desplegar, la primera visita registra el service worker (`sw.js`) y la app funciona sin conexión. Las actualizaciones muestran el aviso "Nueva versión disponible" y no se aplican hasta pulsar "Actualizar".
+
+Desarrollo local: `pnpm --filter @af4/web dev`; vista previa de la compilación: `pnpm --filter @af4/web preview`.

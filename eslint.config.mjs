@@ -1,6 +1,7 @@
 // Reglas de ESLint del proyecto. Protegido (ver tools/guardas/src/reglas.ts).
 // El núcleo (packages/engine) debe ser determinista: ver sección 3.1 de la arquitectura.
 import tseslint from "typescript-eslint";
+import reactHooks from "eslint-plugin-react-hooks";
 
 // Globales que dependen del entorno o del reloj.
 const GLOBALES_PROHIBIDAS = [
@@ -56,7 +57,7 @@ export default tseslint.config(
     ignores: ["**/node_modules/**", "**/dist/**", "**/coverage/**"],
   },
   {
-    files: ["**/*.ts"],
+    files: ["**/*.ts", "**/*.tsx"],
     extends: [tseslint.configs.strictTypeChecked],
     languageOptions: {
       parserOptions: {
@@ -64,6 +65,12 @@ export default tseslint.config(
         tsconfigRootDir: import.meta.dirname,
       },
     },
+  },
+  {
+    // Reglas de hooks de React solo para la interfaz (apps/web).
+    files: ["apps/web/**/*.{ts,tsx}"],
+    plugins: { "react-hooks": reactHooks },
+    rules: { ...reactHooks.configs.recommended.rules },
   },
   {
     files: ["packages/engine/**/*.ts"],
