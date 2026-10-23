@@ -8,10 +8,15 @@
     "build": "tsc -p tsconfig.json && vite build",
     "preview": "vite preview",
     "typecheck": "tsc -p tsconfig.json",
-    "test": "vitest run"
+    "test": "vitest run",
+    "android:sync": "pnpm run build && cap sync android",
+    "android:apk": "cd android && ./gradlew assembleDebug"
   },
   "dependencies": {
     "@af4/contracts": "workspace:*",
+    "@capacitor/android": "8.5.3",
+    "@capacitor/cli": "8.5.3",
+    "@capacitor/core": "8.5.3",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "workbox-window": "7.4.1"

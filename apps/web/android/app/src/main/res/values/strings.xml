@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Android Futbol 4</string>
+    <string name="title_activity_main">Android Futbol 4</string>
+    <string name="package_name">com.oftexa.androidfutbol</string>
+    <string name="custom_url_scheme">com.oftexa.androidfutbol</string>
+</resources>
