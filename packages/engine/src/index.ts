@@ -1,2 +1,2 @@
-// Núcleo del juego. Sin contenido todavía (tarea T-00).
-export {};
+// Núcleo del juego. Expone la API pública (arquitectura 3.3).
+export * from "./api";
